@@ -44,11 +44,11 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               //enableFeedback: false,
               onTap: () {
                 setState(() {
-                  pageIndex = 0;
+                  pageIndex = 1;
                 });
                 Get.to(GalleryScreen());
               },
-              child: pageIndex == 0
+              child: pageIndex == 1
                   ? Container(
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
@@ -67,7 +67,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.image_outlined,
                                 color: Colors.black,
-                                size: 20,
+                                size: 28,
                               ),
                             ),
                             Expanded(
@@ -98,7 +98,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                             child: Icon(
                               Icons.image_outlined,
                               color: Colors.white.withOpacity(0.7),
-                              size: 20,
+                              size: 28,
                             ),
                           ),
                           Expanded(
@@ -123,7 +123,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               //enableFeedback: false,
               onTap: () {
                 setState(() {
-                  pageIndex = 1;
+                  pageIndex = 2;
                 });
                 showModalBottomSheet(
                   elevation: 25,
@@ -137,7 +137,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                   },
                 );
               },
-              child: pageIndex == 1
+              child: pageIndex == 2
                   ? Container(
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
@@ -156,7 +156,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.color_lens_outlined,
                                 color: Colors.black,
-                                size: 20,
+                                size: 28,
                               ),
                             ),
                             Expanded(
@@ -187,7 +187,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                             child: Icon(
                               Icons.color_lens_outlined,
                               color: Colors.white.withOpacity(0.7),
-                              size: 20,
+                              size: 28,
                             ),
                           ),
                           Expanded(
@@ -213,7 +213,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               //enableFeedback: false,
               onTap: () {
                 setState(() {
-                  pageIndex = 2;
+                  pageIndex = 3;
                 });
                 showModalBottomSheet(
                   elevation: 25,
@@ -227,7 +227,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                   },
                 );
               },
-              child: pageIndex == 2
+              child: pageIndex == 3
                   ? Container(
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
@@ -246,7 +246,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.image_outlined,
                                 color: Colors.black,
-                                size: 20,
+                                size: 28,
                               ),
                             ),
                             Expanded(
@@ -273,7 +273,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                         Padding(
                           padding: const EdgeInsets.only(top: 16.0),
                           child: Icon(Icons.image_outlined,
-                              size: 20, color: Colors.white.withOpacity(0.7)),
+                              size: 28, color: Colors.white.withOpacity(0.7)),
                         ),
                         Expanded(
                           child: Container(
@@ -296,11 +296,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               //enableFeedback: false,
               onTap: () {
                 setState(() {
-                  pageIndex = 3;
+                  pageIndex = 4;
                 });
                 showNonPremiumPurchasedDialog(context);
+
               },
-              child: pageIndex == 3
+              child: pageIndex == 4
                   ? Container(
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
@@ -319,7 +320,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.download_outlined,
                                 color: Colors.black,
-                                size: 20,
+                                size: 28,
                               ),
                             ),
                             Expanded(
@@ -346,7 +347,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                         Padding(
                           padding: const EdgeInsets.only(top: 16.0),
                           child: Icon(Icons.download_outlined,
-                              size: 20, color: Colors.white.withOpacity(0.7)),
+                              size: 28, color: Colors.white.withOpacity(0.7)),
                         ),
                         Expanded(
                           child: Container(
@@ -369,11 +370,11 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               //enableFeedback: false,
               onTap: () {
                 setState(() {
-                  pageIndex = 4;
+                  pageIndex = 5;
                 });
                 Get.to(SettingScreen());
               },
-              child: pageIndex == 4
+              child: pageIndex == 5
                   ? Container(
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
@@ -384,7 +385,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            top: 16.0, left: 13, right: 13),
+                            top: 13.0, left: 13, right: 10),
                         child: Column(
                           children: [
                             const Padding(
@@ -392,7 +393,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.settings,
                                 color: Colors.black,
-                                size: 20,
+                                size: 28,
                               ),
                             ),
                             Expanded(
@@ -422,7 +423,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                           Padding(
                             padding: EdgeInsets.all(0),
                             child: Icon(Icons.settings,
-                                size: 20, color: Colors.white.withOpacity(0.7)),
+                                size: 28, color: Colors.white.withOpacity(0.7)),
                           ),
                           Expanded(
                             child: Container(

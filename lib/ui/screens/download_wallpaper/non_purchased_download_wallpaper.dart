@@ -4,6 +4,7 @@ import 'package:wallpaper_app/ui/screens/download_wallpaper/purchased_premium_do
 import 'package:wallpaper_app/ui/values/my_colors.dart';
 
 import '../premium_access/premium_access_screen.dart';
+import 'download_wallpaper.dart';
 
 showNonPremiumPurchasedDialog(BuildContext context) {
   showModalBottomSheet(
@@ -21,7 +22,8 @@ showNonPremiumPurchasedDialog(BuildContext context) {
           GestureDetector(
             onTap: (){
               Get.back();
-              showPremiumPurchasedDialog(context);
+              showDownloadWallpaperDialog(context);
+             // showPremiumPurchasedDialog(context);
             },
             child: Container(
               width: MediaQuery.of(context).size.width*0.6,

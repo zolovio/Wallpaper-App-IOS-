@@ -1,10 +1,6 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:wallpaper_app/main.dart';
-
 import '../home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -38,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: 200,
                 child: Hero(
                     tag: 'imageHero',
-                    child: Image.asset("assets/images/appLogo55.png"))),
+                    child: Image.asset("assets/images/appLogo56.png"))),
             const SizedBox(height: 20,),
             const Text("iNVISIBLE iSLAND",
             style: TextStyle(

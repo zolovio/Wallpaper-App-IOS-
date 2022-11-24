@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wallpaper_app/ui/values/my_colors.dart';
-
 import '../../../data/models/color_model.dart';
 
 class ChangeColorScreen extends StatefulWidget {

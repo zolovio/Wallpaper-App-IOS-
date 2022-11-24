@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:wallpaper_app/ui/values/my_colors.dart';
 
 class PremiumAccessScreen extends StatelessWidget {
@@ -8,7 +9,12 @@ class PremiumAccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back_ios,color: Colors.black,),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios,color: Colors.black),
+          onPressed: (){Get.back();},
+        ),
+
+
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Text("Premium Access",
