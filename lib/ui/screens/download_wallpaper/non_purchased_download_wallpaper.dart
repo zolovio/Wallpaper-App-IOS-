@@ -26,19 +26,21 @@ showNonPremiumPurchasedDialog(BuildContext context) {
              // showPremiumPurchasedDialog(context);
             },
             child: Container(
-              width: MediaQuery.of(context).size.width*0.6,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              width: MediaQuery.of(context).size.width*0.8,
               //height: MediaQuery.of(context).size.height*0.6,
               decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.9),
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(50)
 
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 12),
                 child: Text("Download low quality sample with watermark",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.white
+                  color: Colors.white,
+                  fontSize: 16
 
                 ),
                 ),
@@ -52,24 +54,27 @@ showNonPremiumPurchasedDialog(BuildContext context) {
               Get.to(PremiumAccessScreen());
             },
             child: Container(
-              width: MediaQuery.of(context).size.width*0.6,
+              padding: EdgeInsets.symmetric(horizontal: 20,),
+              width: MediaQuery.of(context).size.width*0.8,
               decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.9),
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(50)
 
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 12),
                 child: Text("Download high quality premium version",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Colors.white
+                      color: Colors.white,
+                      fontSize: 16
 
                   ),
                 ),
               ),
             ),
           ),
+            SizedBox(height: 20,),
         ],),
       ),
       context: context);

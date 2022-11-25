@@ -27,7 +27,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
+      height: 100,
       decoration: const BoxDecoration(
         color: MyColors.black,
         borderRadius: BorderRadius.only(
@@ -36,7 +36,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 2),
+        padding: const EdgeInsets.only(top: 6,bottom: 3),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -50,16 +50,17 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               },
               child: pageIndex == 1
                   ? Container(
+                //height: 80,
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                         border: Border.all(color: MyColors.grey, width: 3),
-                        borderRadius: BorderRadius.circular(50),
+                          shape: BoxShape. circle,
                         color: Colors.white,
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsets.only(top: 16.0, left: 6, right: 6),
+                             EdgeInsets.all(10),
                         child: Column(
                           children: [
                             const Padding(
@@ -67,7 +68,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.image_outlined,
                                 color: Colors.black,
-                                size: 28,
+                                size: 36,
                               ),
                             ),
                             Expanded(
@@ -75,12 +76,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                                   constraints:
                                       const BoxConstraints(maxWidth: 70),
                                   child: const Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(0.0),
                                     child: Text(
-                                      "Choose Wallpaper",
+                                      "choose wallpaper",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize: 12,
                                       ),
                                     ),
                                   )),
@@ -98,16 +99,16 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                             child: Icon(
                               Icons.image_outlined,
                               color: Colors.white.withOpacity(0.7),
-                              size: 28,
+                              size: 36,
                             ),
                           ),
                           Expanded(
                             child: Container(
                                 constraints: const BoxConstraints(maxWidth: 70),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(0.0),
                                   child: Text(
-                                    "Choose Wallpaper",
+                                    "choose wallpaper",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 10,
@@ -139,16 +140,19 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               },
               child: pageIndex == 2
                   ? Container(
+
+               // //height: 80,
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
-                        border: Border.all(color: MyColors.grey, width: 3),
-                        borderRadius: BorderRadius.circular(50),
+                       
+                        border: Border.all(color: MyColors.grey, width: 3), 
+                          shape: BoxShape. circle,
                         color: Colors.white,
                       ),
                       child: Padding(
-                        padding:
-                            const EdgeInsets.only(top: 16.0, left: 6, right: 6),
+
+                        padding: EdgeInsets.all(16),
                         child: Column(
                           children: [
                             const Padding(
@@ -156,7 +160,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.color_lens_outlined,
                                 color: Colors.black,
-                                size: 28,
+                                size: 36,
                               ),
                             ),
                             Expanded(
@@ -164,12 +168,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                                   constraints:
                                       const BoxConstraints(maxWidth: 70),
                                   child: const Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(0.0),
                                     child: Text(
-                                      "Change Color",
+                                      "change\n color",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize: 12,
                                       ),
                                     ),
                                   )),
@@ -187,16 +191,16 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                             child: Icon(
                               Icons.color_lens_outlined,
                               color: Colors.white.withOpacity(0.7),
-                              size: 28,
+                              size: 36,
                             ),
                           ),
                           Expanded(
                             child: Container(
                                 constraints: const BoxConstraints(maxWidth: 70),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(0.0),
                                   child: Text(
-                                    "Change Color",
+                                    "change \n color",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: Colors.white.withOpacity(0.7),
@@ -223,22 +227,23 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                   backgroundColor: Colors.transparent,
 
                   builder: (context) {
-                    return const SelectStyleScreen();
+                    return  SelectStyleScreen();
                   },
                 );
               },
               child: pageIndex == 3
                   ? Container(
+               // //height: 80,
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
+                        shape: BoxShape. circle,
                         border: Border.all(color: MyColors.grey, width: 3),
-                        borderRadius: BorderRadius.circular(50),
+                       //   shape: BoxShape. circle,
                         color: Colors.white,
                       ),
                       child: Padding(
-                        padding:
-                            const EdgeInsets.only(top: 16.0, left: 6, right: 6),
+                        padding: EdgeInsets.all(16),
                         child: Column(
                           children: [
                             const Padding(
@@ -246,7 +251,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.image_outlined,
                                 color: Colors.black,
-                                size: 28,
+                                size: 36,
                               ),
                             ),
                             Expanded(
@@ -254,12 +259,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                                   constraints:
                                       const BoxConstraints(maxWidth: 70),
                                   child: const Padding(
-                                    padding: const EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(0),
                                     child: Text(
-                                      "Select Style",
+                                      "style",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize: 12,
                                       ),
                                     ),
                                   )),
@@ -273,15 +278,15 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                         Padding(
                           padding: const EdgeInsets.only(top: 16.0),
                           child: Icon(Icons.image_outlined,
-                              size: 28, color: Colors.white.withOpacity(0.7)),
+                              size: 36, color: Colors.white.withOpacity(0.7)),
                         ),
                         Expanded(
                           child: Container(
                               constraints: const BoxConstraints(maxWidth: 70),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(0.0),
                                 child: Text(
-                                  "Select Style",
+                                  "style",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 10,
@@ -303,16 +308,16 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               },
               child: pageIndex == 4
                   ? Container(
+               // //height: 80,
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                         border: Border.all(color: MyColors.grey, width: 3),
-                        borderRadius: BorderRadius.circular(50),
+                          shape: BoxShape. circle,
                         color: Colors.white,
                       ),
                       child: Padding(
-                        padding:
-                            const EdgeInsets.only(top: 16.0, left: 6, right: 6),
+                        padding: EdgeInsets.all(8),
                         child: Column(
                           children: [
                             const Padding(
@@ -320,7 +325,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.download_outlined,
                                 color: Colors.black,
-                                size: 28,
+                                size: 36,
                               ),
                             ),
                             Expanded(
@@ -328,12 +333,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                                   constraints:
                                       const BoxConstraints(maxWidth: 70),
                                   child: const Padding(
-                                    padding: const EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(0),
                                     child: Text(
-                                      "Download Wallpaper",
+                                      "download wallpaper",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize: 12,
                                       ),
                                     ),
                                   )),
@@ -347,15 +352,15 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                         Padding(
                           padding: const EdgeInsets.only(top: 16.0),
                           child: Icon(Icons.download_outlined,
-                              size: 28, color: Colors.white.withOpacity(0.7)),
+                              size: 36, color: Colors.white.withOpacity(0.7)),
                         ),
                         Expanded(
                           child: Container(
                               constraints: const BoxConstraints(maxWidth: 70),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(0.0),
                                 child: Text(
-                                  "Download Wallpaper",
+                                  "download wallpaper",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 10,
@@ -376,16 +381,16 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
               },
               child: pageIndex == 5
                   ? Container(
+                //height: 80,
                       alignment: Alignment.center,
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                         border: Border.all(color: MyColors.grey, width: 3),
-                        borderRadius: BorderRadius.circular(50),
+                          shape: BoxShape. circle,
                         color: Colors.white,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(
-                            top: 13.0, left: 13, right: 10),
+                        padding: EdgeInsets.all(16),
                         child: Column(
                           children: [
                             const Padding(
@@ -393,7 +398,7 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                               child: Icon(
                                 Icons.settings,
                                 color: Colors.black,
-                                size: 28,
+                                size: 36,
                               ),
                             ),
                             Expanded(
@@ -401,12 +406,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                                   constraints:
                                       const BoxConstraints(maxWidth: 70),
                                   child: const Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(0.0),
                                     child: Text(
-                                      "Settings",
+                                      "settings",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize: 12,
                                       ),
                                     ),
                                   )),
@@ -423,15 +428,15 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                           Padding(
                             padding: EdgeInsets.all(0),
                             child: Icon(Icons.settings,
-                                size: 28, color: Colors.white.withOpacity(0.7)),
+                                size: 36, color: Colors.white.withOpacity(0.7)),
                           ),
                           Expanded(
                             child: Container(
                                 constraints: const BoxConstraints(maxWidth: 70),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(0.0),
                                   child: Text(
-                                    "Settings",
+                                    "settings",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 10,
