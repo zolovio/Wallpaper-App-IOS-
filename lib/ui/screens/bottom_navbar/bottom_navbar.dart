@@ -1,32 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:wallpaper_app/ui/screens/select_style_screen/select_style_screen.dart';
+import 'package:wallpaper_app/data/controllers/bottom_controller.dart';
+import 'package:wallpaper_app/ui/screens/change_color/change_color.dart';
+import 'package:wallpaper_app/ui/screens/download_wallpaper/non_purchased_download_wallpaper.dart';
+import 'package:wallpaper_app/ui/screens/select_notches_screen/select_notches_screen.dart';
 import 'package:wallpaper_app/ui/screens/setting/setting_screen.dart';
+import 'package:wallpaper_app/ui/screens/wallpaper/wallpaper_screen.dart';
 import 'package:wallpaper_app/ui/values/my_colors.dart';
-import '../change_color/change_color.dart';
-import '../download_wallpaper/non_purchased_download_wallpaper.dart';
-import '../wallpaper/gallery_screen.dart';
 
-class BuildMyNavBar extends StatefulWidget {
-  const BuildMyNavBar({Key? key}) : super(key: key);
+
+
+
+class BuildMyNavBar extends GetView<BottomNavbarController> {
 
   @override
-  _BuildMyNavBarState createState() => _BuildMyNavBarState();
-}
+  BottomNavbarController controller=BottomNavbarController();
 
-class _BuildMyNavBarState extends State<BuildMyNavBar> {
-  int pageIndex = 0;
-
-  final pages = [
-    GalleryScreen()
-    // const Page2(),
-    // const Page3(),
-    // const Page4(),
-  ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Obx(()=>Container(
       height: 100,
       decoration: const BoxDecoration(
         color: MyColors.black,
@@ -43,12 +37,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
             GestureDetector(
               //enableFeedback: false,
               onTap: () {
-                setState(() {
-                  pageIndex = 1;
-                });
-                Get.to(GalleryScreen());
+                controller.selectedIndex(1);
+
+                Get.to(WallpaperScreen());
+
               },
-              child: pageIndex == 1
+              child: controller.pageIndex.value == 1
                   ? Container(
                 //height: 80,
                       alignment: Alignment.center,
@@ -123,22 +117,22 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
             GestureDetector(
               //enableFeedback: false,
               onTap: () {
-                setState(() {
-                  pageIndex = 2;
-                });
-                showModalBottomSheet(
-                  elevation: 25,
-                  // backgroundColor: Color(0XFFF2F2F2),
-                  context: context,
-                  barrierColor: Colors.transparent,
-                  backgroundColor: Colors.transparent,
 
-                  builder: (context) {
-                    return const ChangeColorScreen();
-                  },
-                );
+            controller.selectedIndex(2);
+            Get.to(ChangeColorScreen());
+                // showModalBottomSheet(
+                //   elevation: 25,
+                //   // backgroundColor: Color(0XFFF2F2F2),
+                //   context: context,
+                //   barrierColor: Colors.transparent,
+                //   backgroundColor: Colors.transparent,
+                //
+                //   builder: (context) {
+                //     return  ChangeColorScreen();
+                //   },
+                // );
               },
-              child: pageIndex == 2
+              child: controller.pageIndex.value == 2
                   ? Container(
 
                // //height: 80,
@@ -216,22 +210,11 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
             GestureDetector(
               //enableFeedback: false,
               onTap: () {
-                setState(() {
-                  pageIndex = 3;
-                });
-                showModalBottomSheet(
-                  elevation: 25,
-                  // backgroundColor: Color(0XFFF2F2F2),
-                  context: context,
-                  barrierColor: Colors.transparent,
-                  backgroundColor: Colors.transparent,
+              controller.selectedIndex(3);
+              Get.to(SelectNotchesScreen());
 
-                  builder: (context) {
-                    return  SelectStyleScreen();
-                  },
-                );
               },
-              child: pageIndex == 3
+              child: controller.pageIndex.value == 3
                   ? Container(
                // //height: 80,
                       alignment: Alignment.center,
@@ -246,13 +229,12 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                         padding: EdgeInsets.all(16),
                         child: Column(
                           children: [
-                            const Padding(
+                             Padding(
                               padding: EdgeInsets.all(0),
-                              child: Icon(
-                                Icons.image_outlined,
-                                color: Colors.black,
-                                size: 36,
-                              ),
+                              child: Image.asset("assets/images/style.png",
+                              color: Colors.black,
+                              height: 36,
+                              )
                             ),
                             Expanded(
                               child: Container(
@@ -276,10 +258,10 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
                   : Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 16.0),
-                          child: Icon(Icons.image_outlined,
-                              size: 36, color: Colors.white.withOpacity(0.7)),
-                        ),
+                          padding:  EdgeInsets.only(top: 16.0),
+                          child: Image.asset("assets/images/style.png",
+                            height: 36,
+                          )),
                         Expanded(
                           child: Container(
                               constraints: const BoxConstraints(maxWidth: 70),
@@ -300,13 +282,11 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
             GestureDetector(
               //enableFeedback: false,
               onTap: () {
-                setState(() {
-                  pageIndex = 4;
-                });
+               controller.selectedIndex(4);
                 showNonPremiumPurchasedDialog(context);
 
               },
-              child: pageIndex == 4
+              child: controller.pageIndex.value == 4
                   ? Container(
                // //height: 80,
                       alignment: Alignment.center,
@@ -374,12 +354,10 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
             GestureDetector(
               //enableFeedback: false,
               onTap: () {
-                setState(() {
-                  pageIndex = 5;
-                });
-                Get.to(SettingScreen());
+              controller.selectedIndex(5);
+                Get.to( SettingScreen());
               },
-              child: pageIndex == 5
+              child: controller.pageIndex.value == 5
                   ? Container(
                 //height: 80,
                       alignment: Alignment.center,
@@ -451,6 +429,6 @@ class _BuildMyNavBarState extends State<BuildMyNavBar> {
           ],
         ),
       ),
-    );
+    ));
   }
 }

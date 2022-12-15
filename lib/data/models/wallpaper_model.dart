@@ -1,11 +1,11 @@
-class ColorsModel {
+class WallpaperModel {
   bool? status;
   String? message;
   List<Result>? result;
 
-  ColorsModel({this.status, this.message, this.result});
+  WallpaperModel({this.status, this.message, this.result});
 
-  ColorsModel.fromJson(Map<String, dynamic> json) {
+  WallpaperModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
     if (json['result'] != null) {
@@ -29,22 +29,19 @@ class ColorsModel {
 
 class Result {
   String? id;
-  String? name;
-  String? code;
+  String? image;
 
-  Result({this.id, this.name, this.code});
+  Result({this.id, this.image});
 
   Result.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    name = json['name'];
-    code = json['code'];
+    image = json['image'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['name'] = this.name;
-    data['code'] = this.code;
+    data['image'] = this.image;
     return data;
   }
 }
